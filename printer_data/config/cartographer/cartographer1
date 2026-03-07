@@ -53,13 +53,14 @@ verbose: no # For extra output
 
 [bed_mesh]
 zero_reference_position: 175, 175 # The centre of your bed. 
-speed: 300
+speed: 200
 horizontal_move_z: 3
 mesh_min: 35, 28 # The first probed coordinate, nearest to the origin. This coordinate is relative to the probe's location.
 mesh_max: 315, 320 # The probed coordinate farthest from the origin. This is not necessarily the last point probed, as the probing process occurs in a zig-zag fashion. As with mesh_min, this coordinate is relative to the probe's location.
-probe_count: 20, 20
+probe_count: 30, 30
 adaptive_margin: 10
 mesh_pps: 0,0 # Disable interpolation - mesh is probably dense enough
+algorithm: bicubic
 
 [temperature_sensor cartographer]
 sensor_type: temperature_mcu
@@ -82,9 +83,9 @@ probe_points:
 
 [cartographer coil]
 #   The name of the coil temperature sensor.
-#name: 'cartographer_coil'
+name: 'cartographer_coil'
 #   The minimum temperature of the coil, below this will trigger a warning.
 #   Constraints: minimum: -273.15
-#min_temp: 0
+min_temp: 0
 #   The maximum temperature of the coil, above this will trigger a warning.
-#max_temp: 105
+max_temp: 105
